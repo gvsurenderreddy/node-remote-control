@@ -3728,8 +3728,9 @@ module.exports = {
     DEKTOP_BROADCAST: 'client_image',
 
     // mouse events
-    MOUSE_CLICK: 'mouse_click',
-    MOUSE_MOVE: 'mouse_move'
+    MOUSE_MOVE: 'mouse_move',
+    LEFT_MOUSE_CLICK: 'left_mouse_click',
+    RIGHT_MOUSE_CLICK: 'right_mouse_click'
 
 };
 
@@ -8635,6 +8636,11 @@ canvas.addEventListener('mousemove', function (event) {
         console.log(pos);
         socket.emit(_actions2.default.MOUSE_MOVE, pos);
     }
+});
+
+canvas.addEventListener('click', function (event) {
+    var pos = getMousePosition(canvas, event);
+    socket.emit(_actions2.default.LEFT_MOUSE_CLICK, pos);
 });
 
 function getMousePosition(canvas, event) {

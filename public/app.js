@@ -56,6 +56,11 @@ canvas.addEventListener('mousemove', function(event) {
     }
 });
 
+canvas.addEventListener('click', (event) => {
+    const pos = getMousePosition(canvas, event);
+    socket.emit(actions.LEFT_MOUSE_CLICK, pos);
+})
+
 function getMousePosition(canvas, event) { 
     // extract mouse position
     var rect = canvas.getBoundingClientRect();

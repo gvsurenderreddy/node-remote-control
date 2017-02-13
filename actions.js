@@ -10,7 +10,8 @@ module.exports = {
     DEKTOP_BROADCAST: 'client_image',
 
     // mouse events
-    MOUSE_CLICK: 'mouse_click',
-    MOUSE_MOVE: 'mouse_move',    
+    MOUSE_MOVE: 'mouse_move',
+    LEFT_MOUSE_CLICK: 'left_mouse_click',
+    RIGHT_MOUSE_CLICK: 'right_mouse_click',
 
 };

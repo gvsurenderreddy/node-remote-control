@@ -28,7 +28,12 @@ socket.on('connect', () => {
     }, config.broadcasting.screenshotInterval);
 
     socket.on(actions.MOUSE_MOVE, (pos) => {
-         robot.moveMouse(pos.x, pos.y);
+         robot.moveMouseSmooth(pos.x, pos.y);
     })
+
+    socket.on(actions.LEFT_MOUSE_CLICK, pos => {
+        robot.moveMouse(pos.x, pos.y);
+        robot.mouseClick("left");
+    });
 
 })
