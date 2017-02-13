@@ -13,4 +13,4 @@ To run the server: <br>
 To run the client: <br>
 `npm run start:client`
 
-Then navigate to localhost:5000 in you browser and you should see the broadcasting.
+Then navigate to `http://localhost:5000` in you browser and you should see the broadcasting.
