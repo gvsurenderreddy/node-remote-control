@@ -31,8 +31,13 @@ module.exports = (io) => {
       });
 
       socket.on(actions.LEFT_MOUSE_CLICK, pos => {
-        logBrowser("right mouse click " + JSON.stringify(pos));
+        logBrowser("left mouse click " + JSON.stringify(pos));
         conn.desktop.emit(actions.LEFT_MOUSE_CLICK, pos);
+      })
+
+      socket.on(actions.RIGHT_MOUSE_CLICK, pos => {
+        logBrowser("right mouse click " + JSON.stringify(pos));
+        conn.desktop.emit(actions.RIGHT_MOUSE_CLICK, pos);
       })
           
   });

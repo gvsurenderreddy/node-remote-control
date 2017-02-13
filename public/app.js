@@ -56,9 +56,12 @@ canvas.addEventListener('mousemove', function(event) {
     }
 });
 
-canvas.addEventListener('click', (event) => {
+canvas.addEventListener('mousedown', (event) => {
     const pos = getMousePosition(canvas, event);
-    socket.emit(actions.LEFT_MOUSE_CLICK, pos);
+    if (event.which == 3) 
+        socket.emit(actions.RIGHT_MOUSE_CLICK, pos);
+    else 
+        socket.emit(actions.LEFT_MOUSE_CLICK, pos);
 })
 
 function getMousePosition(canvas, event) { 
